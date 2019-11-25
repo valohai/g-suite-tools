@@ -30,3 +30,18 @@ To convert `groups.json` into human-readable Markdown:
 ```
 python -m gst.format_group_info --json=groups.json --write-markdown=-
 ```
+
+Retrieve information for all users
+----------------------------------
+
+
+```
+python -m gst.get_user_info --domain=mydomain.com --write-json=users.json
+```
+
+To list users with their email aliases:
+
+
+```
+python -m gst.list_user_emails --json=groups.json -w-
+```

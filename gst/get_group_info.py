@@ -4,9 +4,8 @@ import sys
 from typing import List
 
 import tqdm
-from googleapiclient.discovery import build
 
-from gst.credentials import get_credentials
+from gst.credentials import get_directory_read_client
 from gst.utils import get_paginated
 
 
@@ -15,14 +14,7 @@ def main():
     ap.add_argument("--domain", required=True)
     ap.add_argument("--write-json", type=argparse.FileType(mode="w"))
     args = ap.parse_args()
-    credentials = get_credentials(
-        "group_report.py",
-        scopes=[
-            "https://www.googleapis.com/auth/admin.directory.group.readonly",
-            "https://www.googleapis.com/auth/admin.directory.user.readonly",
-        ],
-    )
-    directory_client = build("admin", "directory_v1", credentials=credentials)
+    directory_client = get_directory_read_client()
     domain = args.domain
 
     groups = get_domain_groups(directory_client, domain)
