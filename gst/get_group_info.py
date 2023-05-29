@@ -32,7 +32,7 @@ def populate_groups_members(directory_client, groups: List[dict]) -> None:
         for members_resp in get_paginated(
             directory_client.members().list, {"groupKey": group["id"]}
         ):
-            members.extend(members_resp["members"])
+            members.extend(members_resp.get("members", []))
 
 
 def get_domain_groups(directory_client, domain) -> List[dict]:
