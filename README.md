@@ -6,7 +6,7 @@ A growing collection tools for managing a G Suite organization.
 Before you begin
 ----------------
 
-* Install the requirements into a Python 3.6+ virtualenv. (`pip install -r requirements.txt`)
+* Install the requirements into a Python 3.8+ virtualenv. (`pip install -r requirements.txt`)
 * Set up an OAuth application for Google APIs. 
   Follow the instructions on [this page](https://developers.google.com/admin-sdk/directory/v1/guides/authorizing.html)
   for "installed software" authentication and once you have a `client_secret.json` file, plop it in the

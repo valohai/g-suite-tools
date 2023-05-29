@@ -13,7 +13,7 @@ def get_credentials(key, scopes):
     flow = InstalledAppFlow.from_client_secrets_file(
         "client_secret.json", scopes=scopes
     )
-    credentials = flow.run_console()
+    credentials = flow.run_local_server()
     with open(cached_credentials_file, "wb") as fp:
         pickle.dump(credentials, fp)
     return credentials
