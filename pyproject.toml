@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "g-suite-tools"
+dynamic = ["version"]
+description = 'Tools for managing G Suites'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Aarni Koskela", email = "akx@iki.fi" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "google-api-python-client~=1.7",
+  "google-auth-oauthlib~=0.4",
+  "tqdm~=4.38",
+]
+
+[project.urls]
+Documentation = "https://github.com/valohai/g-suite-tools#readme"
+Issues = "https://github.com/valohai/g-suite-tools/issues"
+Source = "https://github.com/valohai/g-suite-tools"
+
+[tool.hatch.version]
+path = "gst/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["gst"]

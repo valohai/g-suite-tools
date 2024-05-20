@@ -1,13 +1,17 @@
+import logging
 import os
 import pickle
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
+log = logging.getLogger(__name__)
+
 
 def get_credentials(key, scopes):
     cached_credentials_file = f"./{key}.credentials.pickle"
     if os.path.isfile(cached_credentials_file):
+        log.info("Using cached credentials from %s", cached_credentials_file)
         with open(cached_credentials_file, "rb") as infp:
             return pickle.load(infp)
     flow = InstalledAppFlow.from_client_secrets_file(
