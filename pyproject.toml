@@ -30,6 +30,11 @@ dependencies = [
   "tqdm~=4.38",
 ]
 
+[project.optional-dependencies]
+ical = [
+  "icalendar>=6.1.1"
+]
+
 [project.urls]
 Documentation = "https://github.com/valohai/g-suite-tools#readme"
 Issues = "https://github.com/valohai/g-suite-tools/issues"

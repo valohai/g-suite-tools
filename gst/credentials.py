@@ -32,3 +32,14 @@ def get_directory_read_client():
         ],
     )
     return build("admin", "directory_v1", credentials=credentials)
+
+
+def get_calendar_read_client():
+    credentials = get_credentials(
+        key="get_calendar_read_client",
+        scopes=[
+            "https://www.googleapis.com/auth/calendar.readonly",
+            "https://www.googleapis.com/auth/calendar.events.readonly",
+        ],
+    )
+    return build("calendar", "v3", credentials=credentials)

@@ -1,3 +1,6 @@
+*.ics
+*.json
+*.jsonl
 *.pickle
 *.py[cod]
-/*.json
+*.vcal
